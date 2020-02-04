@@ -2,7 +2,7 @@
 import argparse
 import numpy as np
 
-def genMatrix(size=1024, value=1):
+def genMatrix(size=102, value=1):
     """
     Generates a 2d square matrix of the specified size with the specified values
     """
@@ -11,7 +11,7 @@ def genMatrix(size=1024, value=1):
 
     return matrix
 
-def genMatrix2(size=1024, value=1):
+def genMatrix2(size=102, value=2):
     """
     Generates a 2d square matrix of the specified size with the specified values
     """
@@ -28,8 +28,8 @@ def printSubarray(matrix, size=10):
 
     for row in range(1, 10):
         for col in range(1, 10):
-            print(f'{matrix[row][col]} ' , end='')
-        print('')
+            print("{" , matrix[row][col] , "}" , end="")
+        print("")
 
 def writeToFile(matrix, fileName):
     """
@@ -39,7 +39,7 @@ def writeToFile(matrix, fileName):
     with open(fileName, 'w') as file:
         for row in matrix:
             for col in row:
-                file.write(f'{col} ')
+                file.write("{col}")
             file.write('\n')
 
 def readFromFile(fileName):
@@ -75,10 +75,10 @@ def main():
     mat = genMatrix(args.size, args.value)
 
     if args.filename is not None:
-        print(f'Writing matrix to {args.filename}')
+        print("Writing matrix to {args.filename}")
         writeToFile(mat, args.filename)
 
-        print(f'Testing file')
+        print("Testing file")
         printSubarray(readFromFile(args.filename))
     else:
         printSubarray(mat)
