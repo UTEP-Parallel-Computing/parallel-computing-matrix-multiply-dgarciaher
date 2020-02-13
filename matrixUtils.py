@@ -2,7 +2,7 @@
 import argparse
 import numpy as np
 
-def genMatrix(size=102, value=1):
+def genMatrix(size=150, value=1):
     """
     Generates a 2d square matrix of the specified size with the specified values
     """
@@ -11,7 +11,7 @@ def genMatrix(size=102, value=1):
 
     return matrix
 
-def genMatrix2(size=102, value=2):
+def genMatrix2(size=150, value=1):
     """
     Generates a 2d square matrix of the specified size with the specified values
     """
